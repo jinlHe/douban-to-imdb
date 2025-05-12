@@ -10,6 +10,19 @@ USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36
 START_DATE = '20050502'
 IS_OVER = False
 
+# Replace with your Douban cookies
+DOUBAN_COOKIES = {
+    "bid": "your_bid_here",
+    "dbcl2": "your_dbcl2_here",
+    "ck": "your_ck_here",
+    # Add more cookies as needed
+}
+
+session = requests.Session()
+session.headers.update({
+    'User-Agent': USER_AGENT
+})
+session.cookies.update(DOUBAN_COOKIES)
 
 def get_rating(rating_class):
     """
